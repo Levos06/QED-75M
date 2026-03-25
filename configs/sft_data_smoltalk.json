@@ -1,0 +1,69 @@
+{
+  "val_examples": 2000,
+  "max_train_examples": 200000,
+  "min_supervised_tokens": 16,
+  "shuffle": true,
+  "format": "messages",
+  "messages_field": "messages",
+  "sources": [
+    {
+      "source_name": "smol_magpie_ultra",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "smol-magpie-ultra",
+      "split": "train",
+      "weight": 0.4,
+      "row_filters": {
+        "quality": "good"
+      }
+    },
+    {
+      "source_name": "openhermes",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "openhermes-100k",
+      "split": "train",
+      "weight": 0.15
+    },
+    {
+      "source_name": "self_oss_instruct",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "self-oss-instruct",
+      "split": "train",
+      "weight": 0.15
+    },
+    {
+      "source_name": "everyday_conversations",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "everyday-conversations",
+      "split": "train",
+      "weight": 0.01
+    },
+    {
+      "source_name": "numina_cot",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "numina-cot-100k",
+      "split": "train",
+      "weight": 0.1
+    },
+    {
+      "source_name": "metamathqa",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "metamathqa-50k",
+      "split": "train",
+      "weight": 0.05
+    },
+    {
+      "source_name": "longalign",
+      "path": "HuggingFaceTB/smoltalk",
+      "config_name": "longalign",
+      "split": "train",
+      "weight": 0.015
+    },
+    {
+      "source_name": "ultrachat_200k",
+      "path": "HuggingFaceH4/ultrachat_200k",
+      "config_name": null,
+      "split": "train_sft",
+      "weight": 0.125
+    }
+  ]
+}

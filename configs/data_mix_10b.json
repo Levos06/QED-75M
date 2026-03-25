@@ -1,0 +1,56 @@
+{
+  "tokenizer_sample_documents": 2000000,
+  "tokenizer_min_frequency": 2,
+  "tokenizer_special_tokens": [
+    "<pad>",
+    "<bos>",
+    "<eos>",
+    "<unk>"
+  ],
+  "train_tokens": 10000000000,
+  "val_tokens": 20000000,
+  "shard_size_tokens": 100000000,
+  "sources": [
+    {
+      "name": "fineweb_edu",
+      "path": "HuggingFaceFW/fineweb-edu",
+      "config_name": "sample-10BT",
+      "split": "train",
+      "text_field": "text",
+      "weight": 0.6,
+      "streaming": true,
+      "shuffle_buffer": 10000
+    },
+    {
+      "name": "cosmopedia_v2",
+      "path": "HuggingFaceTB/smollm-corpus",
+      "config_name": "cosmopedia-v2",
+      "split": "train",
+      "text_field": "text",
+      "weight": 0.2,
+      "streaming": true,
+      "shuffle_buffer": 10000
+    },
+    {
+      "name": "the_stack_python",
+      "path": "bigcode/the-stack-dedup",
+      "config_name": null,
+      "data_dir": "data/python",
+      "split": "train",
+      "text_field": "content",
+      "weight": 0.1,
+      "streaming": true,
+      "shuffle_buffer": 2000
+    },
+    {
+      "name": "finemath",
+      "path": "HuggingFaceTB/finemath",
+      "config_name": "finemath-4plus",
+      "split": "train",
+      "text_field": "text",
+      "weight": 0.1,
+      "streaming": true,
+      "shuffle_buffer": 5000
+    }
+  ]
+}
